@@ -131,6 +131,7 @@ return { -- LSP Configuration & Plugins
     local lspconfig = require "lspconfig"
     lspconfig.tsserver.setup {}
     lspconfig.rust_analyzer.setup {}
+    lspconfig.aiken.setup {}
     lspconfig.lua_ls.setup {
       settings = {
         Lua = {

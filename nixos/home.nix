@@ -7,6 +7,7 @@
     ll = " ls -l";
     ".." = "cd ..";
     rsf = "sudo nixos-rebuild switch --flake .";
+    pkgs = "cat ${pkgs.nix}";
   };
 in {
   # Home Manager needs a bit of information about you and the paths it should
@@ -80,7 +81,9 @@ in {
 
   programs.bash = {
     enable = true;
+    enableCompletion = true;
     shellAliases = myAliases;
+    bashrcExtra = "PATH=$PATH:~/.aiken/bin\n";
   };
 
   home.file.".config/wezterm/wezterm.lua".source = ./home/wezterm.lua;

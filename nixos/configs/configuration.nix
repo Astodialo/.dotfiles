@@ -111,6 +111,7 @@
     unzip
     tree-sitter
     fd
+    bash-completion
 
     rustc
     taplo
