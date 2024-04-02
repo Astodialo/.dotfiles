@@ -1,14 +1,15 @@
 #Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -83,11 +84,11 @@
   users.users.delos = {
     isNormalUser = true;
     description = "Delos";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       firefox
       kate
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -98,9 +99,10 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wezterm
-    neovim 
+    neovim
     brave
     obsidian
+    discord
 
     wget
     git
@@ -124,7 +126,7 @@
   # Font stuff
   fonts.fontDir.enable = true;
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Monofur"]; })
+    (nerdfonts.override {fonts = ["FiraCode" "DroidSansMono" "Monofur"];})
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -154,5 +156,5 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 }

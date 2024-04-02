@@ -4,7 +4,6 @@
   environment.systemPackages = with pkgs; [
     haskell-language-server
     lua-language-server
-    stylua
     gopls
     nil
     python311Packages.python-lsp-server
