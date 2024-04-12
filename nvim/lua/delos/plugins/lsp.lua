@@ -129,10 +129,17 @@ return { -- LSP Configuration & Plugins
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local lspconfig = require "lspconfig"
-    lspconfig.tsserver.setup {}
-    lspconfig.rust_analyzer.setup {}
-    lspconfig.aiken.setup {}
+    lspconfig.tsserver.setup {
+      capabilities = capabilities,
+    }
+    lspconfig.rust_analyzer.setup {
+      capabilities = capabilities,
+    }
+    lspconfig.aiken.setup {
+      capabilities = capabilities,
+    }
     lspconfig.lua_ls.setup {
+      capabilities = capabilities,
       settings = {
         Lua = {
           library = {

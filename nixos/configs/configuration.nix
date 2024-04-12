@@ -118,10 +118,13 @@
 
     cargo
     nodejs_21
+    deno
     luajitPackages.luarocks
     gccgo13
 
     rust-analyzer
+
+    exercism
   ];
 
   # Font stuff
