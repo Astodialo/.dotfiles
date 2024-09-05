@@ -537,7 +537,7 @@ projects =
   ]
 
 terminalWithCommand :: String -> String
-terminalWithCommand cmd = "kitty -e 'fish' '-C " <> cmd <> "'"
+terminalWithCommand cmd = "kitty '-e" <> cmd <> "'"
 
 
 projectsTheme :: XPConfig

@@ -88,8 +88,8 @@ in
       export ETH_INTERFACE=$(${networkScript}/bin/check-network eth)
       export WIFI_INTERFACE=$(${networkScript}/bin/check-network wifi)
       echo "Network interfaces $ETH_INTERFACE & $WIFI_INTERFACE"
-      polybar top
-      polybar bottom
+      polybar top 2>${config.xdg.configHome}/polybar/logs/top.log & disown
+      polybar bottom 2>${config.xdg.configHome}/polybar/logs/bottom.log & disown
     '';
   };
 }

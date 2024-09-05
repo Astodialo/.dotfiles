@@ -20,6 +20,9 @@ let
     tree
     vlc
     xsel
+    neofetch
+    duf
+    nitch
   ];
 
   myAliases = {
@@ -28,6 +31,7 @@ let
     rsf = "sudo nixos-rebuild switch --flake .";
     hsf = "home-manager switch --flake .";
     pkgs = "cat ${pkgs.nix}";
+    purrr = "cat ~/purrr";
   };
 in 
 {
