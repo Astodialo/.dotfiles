@@ -9,6 +9,7 @@
       ./hardware-configuration.nix
       #./wm/hyprland.nix
       ./wm/xmonad.nix
+      ./style/stylix.nix
     ];
 
   # Bootloader.
@@ -85,8 +86,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     neovim
-    kitty
-    wezterm
+    alacritty
     brave
     spotify
     discord
