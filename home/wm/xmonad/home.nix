@@ -78,6 +78,7 @@ in
     ../../programs/xmonad/rofi
     ../../programs/xmonad/statix
     ../../services/networkmanager
+    ../../services/dunst
     ../../services/xmonad/picom
     ../../services/xmonad/polybar
     ../../services/xmonad/screenlocker
@@ -86,6 +87,19 @@ in
   home = {
     stateVersion = "24.05";
     packages = xmonadPkgs ++ gnomePkgs;
+  };
+
+  xdg.portal = {
+    enable = true;
+    config = {
+      common = {
+        default = [ "gtk" ];
+      };
+    };
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+    ];
+    xdgOpenUsePortal = true;
   };
 
   xsession = {

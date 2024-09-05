@@ -7,7 +7,6 @@
               ../hardware/opengl.nix
               ../hardware/bluetooth.nix
               ../hardware/time.nix
-              ../stylix.nix
             ];
 
 

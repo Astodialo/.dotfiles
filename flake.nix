@@ -20,7 +20,7 @@
           inherit system;
           modules = [
             ./system/configuration.nix
-          ];
+            stylix.nixosModules.stylix ];
         };
       };
       homeConfigurations = {
