@@ -1,26 +1,25 @@
 {
-  # More schemes at: https://github.com/atpotts/base16-nix/blob/master/schemes.json
   scheme = {
-    # https://github.com/reyemxela/base16-helios-scheme
     helios = {
-      scheme = "Helios";
-      author = "Alex Meyer (https://github.com/reyemxela)";
-      base00 = "1d2021"; # ----
-      base01 = "383c3e"; # ---
-      base02 = "53585b"; # --
-      base03 = "6f7579"; # -
-      base04 = "cdcdcd"; # +
-      base05 = "d5d5d5"; # ++
-      base06 = "dddddd"; # +++
-      base07 = "e5e5e5"; # ++++
-      base08 = "d72638"; # red
-      base09 = "eb8413"; # orange
-      base0A = "f19d1a"; # yellow
-      base0B = "88b92d"; # green
-      base0C = "1ba595"; # aqua/cyan
-      base0D = "1e8bac"; # blue
-      base0E = "be4264"; # purple
-      base0F = "c85e0d"; # brown
+      scheme = "Sakura";
+      author= "Misterio77 (http://github.com/Misterio77)";
+        base00= "feedf3";
+        base01= "f8e2e7";
+        base02= "e0ccd1";
+        base03= "755f64";
+        base04= "665055";
+        base05= "564448";
+        base06= "42383a";
+        base07= "33292b";
+
+        base08= "df2d52";
+        base09= "f6661e";
+        base0A= "c29461";
+        base0B= "2e916d";
+        base0C= "1d8991";
+        base0D= "006e93";
+        base0E= "5e2180";
+        base0F= "ba0d35";
     };
   };
 }
