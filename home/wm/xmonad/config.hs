@@ -240,6 +240,7 @@ myKeys conf@XConfig {XMonad.modMask = modm} =
     , key "MPV"             (modm .|. controlMask,  xK_m    ) $ runScratchpadApp mpv
     , key "Screen recorder" (modm .|. controlMask,  xK_r    ) $ runScratchpadApp scr
     , key "Spotify"         (modm .|. controlMask,  xK_s    ) $ runScratchpadApp spotify
+    , key "Obsidian"        (modm .|. controlMask,  xK_o    ) $ runScratchpadApp obsidian
     ] ^++^
   keySet "Screens" switchScreen ^++^
   keySet "System"
@@ -413,6 +414,7 @@ office    = ClassApp "libreoffice-draw"     "libreoffice-draw"
 pavuctrl  = ClassApp "Pavucontrol"          "pavucontrol"
 scr       = ClassApp "SimpleScreenRecorder" "simplescreenrecorder"
 spotify   = ClassApp "Spotify"              "spotify"
+obsidian  = ClassApp "Obsidian"             "obsidian"
 vlc       = ClassApp "Vlc"                  "vlc"
 
 myManageHook = manageApps <+> manageSpawn <+> manageScratchpads

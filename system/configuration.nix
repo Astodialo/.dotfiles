@@ -50,8 +50,9 @@
 
 
   # Gaming ig
-  hardware.graphics.enable = true;
-  
+  hardware.graphics = {
+    enable = true;
+  };
   
   services.xserver.videoDrivers = ["amdgpu"];
 

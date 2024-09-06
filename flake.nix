@@ -4,6 +4,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    spkgs.url = "nixpkgs/nixos-21.11";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix";
@@ -13,11 +14,18 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, rust-overlay, ...}@inputs:
+  outputs = { self, nixpkgs, spkgs, home-manager, stylix, rust-overlay, ...}@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
+      
       pkgs = nixpkgs.legacyPackages.${system};
+      stable = spkgs.legacyPackages.${system};
+      
+      lxcb_wr = pkgs.symlinkJoin {
+          name = "libxcb";
+          paths = with pkgs; [ xorg.libxcb.dev ];
+      };
     in {
       nixosConfigurations = {
         nixos = lib.nixosSystem {
@@ -38,6 +46,8 @@
           #modules = [ ./home/wm/hyprland/home.nix ];
           modules = [ ./home/wm/xmonad/home.nix 
                     ];
+          extraSpecialArgs = {
+            inherit stable; };
         };
       };
     };

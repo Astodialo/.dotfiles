@@ -73,6 +73,7 @@ in
 
   imports = [
     ../../shared
+    ../../dev/rust
     ../../programs/kitty
     ../../programs/xmonad/autorandr
     ../../programs/xmonad/orage
