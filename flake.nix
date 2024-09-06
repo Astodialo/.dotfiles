@@ -7,9 +7,13 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix";
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, ...}@inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, rust-overlay, ...}@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -20,7 +24,12 @@
           inherit system;
           modules = [
             ./system/configuration.nix
-            stylix.nixosModules.stylix ];
+            stylix.nixosModules.stylix 
+            ({ pkgs, ...}: {
+               nixpkgs.overlays = [rust-overlay.overlays.default ];
+               environment.systemPackages = [pkgs.rust-bin.stable.latest.default ];
+            })
+          ];
         };
       };
       homeConfigurations = {

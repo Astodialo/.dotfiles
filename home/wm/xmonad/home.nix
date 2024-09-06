@@ -44,6 +44,7 @@ let
     simple-scan # scanner gui
     simplescreenrecorder # screen recorder gui
     tldr # summary of a man page
+    flameshot # screen capture
 
     # haskell packages
     haskellPackages.nix-tree # visualize nix dependencies
