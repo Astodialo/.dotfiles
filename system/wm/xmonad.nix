@@ -4,38 +4,33 @@
   imports = [ ./pipewire.nix
               ./dbus.nix
               ./fonts.nix
-              ../hardware/opengl.nix
               ../hardware/bluetooth.nix
               ../hardware/time.nix
             ];
 
 
   services = {
-    gnome.gnome-keyring.enable = true;
     upower.enable = true;
-    
+    libinput = {
+      enable = true;
+    };
+      
+    displayManager.defaultSession = "none+xmonad";
+
     xserver = {
       enable = true;
-      layout = "us";
-    
-      libinput = {
-        enable = true;
-        disableWhileTyping = true;
-      };
-
-      displayManager.defaultSession = "none+xmonad";
 
       windowManager.xmonad = {
         enable = true;
         enableContribAndExtras = true;
       };
-
-      xkbOptions = "caps:ctrl_modifier";
+      
+      xkb = {
+        layout = "us";
+        options = "ctrl:nocaps";
+      };
     };
   };
-
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
 
   systemd.services.upower.enable = true;
 }

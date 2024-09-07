@@ -23,6 +23,8 @@ let
     neofetch
     duf
     nitch
+
+    clinfo
   ];
 
   myAliases = {
