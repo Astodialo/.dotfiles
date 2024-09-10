@@ -8,7 +8,6 @@ let
     ${pkgs.xcape}/bin/xcape -e "Hyper_L=Tab;Hyper_R=backslash"
     ${pkgs.xorg.setxkbmap}/bin/setxkbmap -option ctrl:nocaps
     ${pkgs.autorandr}/bin/autorandr --change
-    ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-A-1 --mode 3840x2160 --rate 60.00
   '';
 
 

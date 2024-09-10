@@ -44,22 +44,22 @@ in
     profiles = {
       "home" = {
         fingerprint = {
-          HDMI-A-1 = screen1;
-          HDMI-A-1-0 = screen2;
+          DisplayPort-2 = screen1;
+          HDMI-A-0 = screen2;
         };
 
         config = {
-          HDMI-A-1 = {
+          DisplayPort-2 = {
             enable = true;
-            crtc = 0;
+            crtc = 1;
             primary = true;
             position = "0x0";
             mode = "3840x2160";
             rate = "60.00";
           };
-          HDMI-A-1-0 = {
+          HDMI-A-0 = {
             enable = true;
-            crtc = 1;
+            crtc = 0;
             position = "0x0";
             mode = "1920x1080";
             rate = "60.00";
