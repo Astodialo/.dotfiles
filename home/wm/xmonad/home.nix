@@ -46,6 +46,7 @@ let
     simplescreenrecorder # screen recorder gui
     tldr # summary of a man page
     flameshot # screen capture
+    glxinfo
 
     # haskell packages
     haskellPackages.nix-tree # visualize nix dependencies

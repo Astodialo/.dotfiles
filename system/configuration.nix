@@ -50,8 +50,9 @@
 
   boot.initrd.kernelModules = ["amdgpu"];
   boot.kernelParams = [
-  "video=HDMI-A-2:3840x2160@60"
+  "video=HDMI-A-1:3840x2160@60"
   ];
+  services.xserver.enable = true;
   services.xserver.videoDrivers = ["amdgpu"];
 
   hardware.graphics = {

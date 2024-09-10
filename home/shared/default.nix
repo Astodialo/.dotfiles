@@ -25,6 +25,12 @@ let
     nitch
 
     clinfo
+
+    lua-language-server
+    rust-analyzer
+    nil
+
+    bottles
   ];
 
   myAliases = {
@@ -33,7 +39,8 @@ let
     rsf = "sudo nixos-rebuild switch --flake .";
     hsf = "home-manager switch --flake .";
     pkgs = "cat ${pkgs.nix}";
-    purrr = "cat ~/purrr";
+    purrr = "cat ~/.purrr";
+    nop = "nix develop";
   };
 in 
 {
