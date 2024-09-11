@@ -48,6 +48,13 @@ in
   programs = { 
     home-manager.enable = true;
 
+    git = {
+      enable = true;
+      userEmail = "panteliskavv@gmail.com";
+      userName = "Astodialo";
+    };
+
+
     bash = {
       enable = true;
       shellAliases = myAliases;

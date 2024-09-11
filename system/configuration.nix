@@ -50,7 +50,7 @@
 
   boot.initrd.kernelModules = ["amdgpu"];
   boot.kernelParams = [
-  "video=HDMI-A-1:3840x2160@60"
+  "video=DisplayPort-2:3840x2160@60"
   ];
   services.xserver.enable = true;
   services.xserver.videoDrivers = ["amdgpu"];
@@ -106,7 +106,6 @@
     obsidian
 
     wget
-    git
     ripgrep
     fd
     gnumake
@@ -114,6 +113,7 @@
     gccgo14
 
     exercism
+    davinci-resolve
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
