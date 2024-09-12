@@ -110,8 +110,8 @@ main' dbus = xmonad . docks . ewmh . ewmhFullscreen . dynProjects . keybindings 
   , borderWidth        = 3
   , modMask            = myModMask
   , workspaces         = myWS
-  , normalBorderColor  = "#dddddd" -- light gray (default)
-  , focusedBorderColor = "#1681f2" -- blue
+  --, normalBorderColor  = "#dddddd" -- light gray (default)
+  --, focusedBorderColor = "#1681f2" -- blue
   , mouseBindings      = myMouseBindings
   , layoutHook         = myLayout
   , manageHook         = myManageHook
@@ -183,7 +183,7 @@ myPolybarLogHook dbus = myLogHook <+> dynamicLogWithPP (polybarHook dbus)
 -- Key bindings. Add, modify or remove key bindings here.
 --
 
-myTerminal   = "kitty"
+myTerminal   = "alacritty"
 appLauncher  = "rofi -modi drun,ssh,window -show drun -show-icons"
 calcLauncher = "rofi -show calc -modi calc -no-show-match -no-sort"
 emojiPicker  = "rofi -modi emoji -show emoji -emoji-mode copy"
@@ -194,7 +194,7 @@ showKeybindings :: [((KeyMask, KeySym), NamedAction)] -> NamedAction
 showKeybindings xs =
   let
     filename = "/home/delos/.xmonad/keybindings"
-    command f = "kitty -e dialog --title 'XMonad Key Bindings' --colors --hline \"$(date)\" --textbox " ++ f ++ " 50 100"
+    command f = "alacritty -e dialog --title 'XMonad Key Bindings' --colors --hline \"$(date)\" --textbox " ++ f ++ " 50 100"
   in addName "Show Keybindings" $ do
     b <- liftIO $ doesFileExist filename
     unless b $ liftIO (writeFile filename (unlines $ showKm xs))
@@ -402,7 +402,7 @@ data App
   deriving Show
 
 audacious = ClassApp "Audacious"            "audacious"
-btm       = TitleApp "btm"                  "kitty -t btm -e btm --color gruvbox --default_widget_type proc"
+btm       = TitleApp "btm"                  "alacritty -t btm -e btm --color gruvbox --default_widget_type proc"
 bazecor   = ClassApp "Bazecor"              "bazecor"
 calendar  = ClassApp "Orage"                "orage"
 eog       = NameApp  "eog"                  "eog"
@@ -539,7 +539,7 @@ projects =
   ]
 
 terminalWithCommand :: String -> String
-terminalWithCommand cmd = "kitty '-e" <> cmd <> "'"
+terminalWithCommand cmd = "alacritty '-e" <> cmd <> "'"
 
 
 projectsTheme :: XPConfig

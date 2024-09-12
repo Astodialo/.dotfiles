@@ -74,8 +74,8 @@ in
 
   imports = [
     ../../shared
-    #../../dev/rust
     ../../programs/kitty
+    ../../programs/alacritty
     ../../programs/xmonad/autorandr
     ../../programs/xmonad/orage
     ../../programs/xmonad/rofi

@@ -2,7 +2,7 @@
 
 {
   stylix.enable = true;
-  stylix.image = ./wallpapers/pink-trees.jpeg;
-  stylix.polarity = "dark";
+  stylix.image = ./wallpapers/mew2.png;
+  stylix.polarity = "light";
 
 }
