@@ -419,7 +419,7 @@ vlc       = ClassApp "Vlc"                  "vlc"
 
 myManageHook = manageApps <+> manageSpawn <+> manageScratchpads
  where
-  isBrowserDialog     = isDialog <&&> className =? "Brave-browser"
+  isBrowserDialog     = isDialog <&&> className =? "Brave"
   isFileChooserDialog = isRole =? "GtkFileChooserDialog"
   isPopup             = isRole =? "pop-up"
   isSplash            = isInProperty "_NET_WM_WINDOW_TYPE" "_NET_WM_WINDOW_TYPE_SPLASH"

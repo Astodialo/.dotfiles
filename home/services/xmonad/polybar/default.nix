@@ -80,7 +80,7 @@ in
     enable = true;
     package = mypolybar;
     config = ./config.ini;
-    extraConfig = bars + colors + mods1 + mods2 + customMods;
+    extraConfig = bars +  mods1 + mods2 + customMods;
     # polybar top -l trace (or info) for debugging purposes
     script = ''
       export MONITOR=$(${monitorScript}/bin/monitor)

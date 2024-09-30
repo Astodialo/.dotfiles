@@ -1,5 +1,6 @@
 { pkgs, config, ... }:
 
+
 let
   extra = ''
     set +x
@@ -71,6 +72,11 @@ in
 {
   programs.home-manager.enable = true;
 
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+  };
 
   imports = [
     ../../shared

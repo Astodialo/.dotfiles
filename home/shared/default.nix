@@ -28,8 +28,13 @@ let
 
     lua-language-server
     rust-analyzer
+    haskell-language-server
     nil
+    nodePackages_latest.typescript-language-server
 
+    steam
+    protonup
+    lutris
     bottles
   ];
 
@@ -68,11 +73,12 @@ in
 
   home = {
     inherit username homeDirectory packages;
-
+    
     sessionVariables = {
       BROWSER = "${pkgs.brave}";
       DISPLAY = ":0";
       EDITOR = "nvim";
+      STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/delos/.steam/root/compatibilitytools.d";
     };
   };
 
